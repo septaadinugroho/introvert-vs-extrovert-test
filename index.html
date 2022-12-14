@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Kamu Introvert atau Extrovert?</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+    <link rel="shortcut icon" href="img/people3.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!--Awal navbar-->
+    <section>
+      <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="personality.html">Tipe kepribadian</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="exvsint.html">Introvert vs Extrovert</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html"><strong>Tes Kepribadian</strong></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="aboutus.html">Tentang Kami</a>
+              </li>
+            </ul>
+            <a class="navbar-brand" href="#">
+              <img src="img/people3.png" alt="Bootstrap" width="30" height="24" />
+            </a>
+            <span class="navbar-text text-warning fst-italic"> <strong>Introvert vs Extrovert ? </strong></span>
+          </div>
+        </div>
+      </nav>
+    </section>
+    <!--Akhir navbar-->
+
+    <section>
+      <div class="welcome text-center text-muted fst-italic">
+        <img class="header-image" src="img/16.JPG" alt="header image" />
+        <h1>Kamu Introvert atau Extrovert?</h1>
+        <div class="start-test" onclick="startTest()">Mulai Tes</div>
+      </div>
+
+      <div class="container">
+        <div class="question-container">
+          <div id="question-count">Pertanyaan <span id="counter"></span>/21</div>
+          <div id="question"></div>
+          <div class="ans" id="div-ans-a" onclick="selectedAnswer(0)"><span class="my-alpha">A</span><span id="ans-a"></span></div>
+          <div class="ans" id="div-ans-b" onclick="selectedAnswer(1)"><span class="my-alpha">B</span><span id="ans-b"></span></div>
+          <div class="ans" id="div-ans-c" onclick="selectedAnswer(2)"><span class="my-alpha">C</span><span id="ans-c"></span></div>
+          <div class="ans" id="div-ans-d" onclick="selectedAnswer(3)"><span class="my-alpha">D</span><span id="ans-d"></span></div>
+          <div class="btn">
+            <div id="previous" onclick="previousQuestion()">< Sebelumnya</div>
+          </div>
+          <div class="btn2">
+            <div id="next" onclick="nextQuestion()">Selanjutnya ></div>
+          </div>
+          <div class="restart">
+            <div id="restart" onclick="restartQuestion()">Mulai Ulang</div>
+          </div>
+
+          <div id="test-result">
+            <img src="img/introvert.png" id="image" />
+            <div id="trait">
+              <strong id="trait-title"></strong> <br />
+              <div>Beberapa karakter yang cocok :</div>
+              <ul id="personalities"></ul>
+            </div>
+          </div>
+        </div>
+        <div class="your-answers">
+          <div class="title">Jawaban yang kamu pilih</div>
+          <div id="answers"></div>
+        </div>
+      </div>
+
+      <div class="text-center text-white fst-italic">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f6f6f8" fill-opacity="1" d="M0,64L240,224L480,96L720,128L960,160L1200,32L1440,128L1440,320L1200,320L960,320L720,320L480,320L240,320L0,320Z"></path></svg>
+        <img src="img/16.2.JPG" alt="" />
+        <h1 id="bawahan">"Jika kamu sudah tua, jangan mencoba mengubah diri sendiri, ubahlah lingkunganmu."</h1>
+        <p id="bawahan">- BF Skinner</p>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path
+            fill="#33a574"
+            fill-opacity="1"
+            d="M0,288L21.8,266.7C43.6,245,87,203,131,202.7C174.5,203,218,245,262,250.7C305.5,256,349,224,393,213.3C436.4,203,480,213,524,218.7C567.3,224,611,224,655,197.3C698.2,171,742,117,785,101.3C829.1,85,873,107,916,112C960,117,1004,107,1047,138.7C1090.9,171,1135,245,1178,277.3C1221.8,309,1265,299,1309,250.7C1352.7,203,1396,117,1418,74.7L1440,32L1440,0L1418.2,0C1396.4,0,1353,0,1309,0C1265.5,0,1222,0,1178,0C1134.5,0,1091,0,1047,0C1003.6,0,960,0,916,0C872.7,0,829,0,785,0C741.8,0,698,0,655,0C610.9,0,567,0,524,0C480,0,436,0,393,0C349.1,0,305,0,262,0C218.2,0,175,0,131,0C87.3,0,44,0,22,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+    </section>
+    <!--footer-->
+    <footer id="footer" class="bg-white text-center text-dark p-1 fst-italic">
+      <p>
+        &copy 2022 <a href="https://www.instagram.com/septaadinugr_/" class="fw-bold text-dark mb-1 mt-3">Septa Adi Nugroho </a> & <a href="https://www.instagram.com/fariscandra/" class="fw-bold text-dark">Faris Candra </a> | Documentation
+        will always save you.
+      </p>
+    </footer>
+    <!--akhir footer-->
+
+    <script src="js/db.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+</html>

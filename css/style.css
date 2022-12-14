@@ -1,0 +1,282 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#carouselExampleDark {
+  width: 40%;
+  height: auto;
+  justify-content: center;
+  margin-left: 400px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.textatas1 h1 {
+  margin: auto;
+}
+
+#downnavbar {
+  background-color: #4297b4;
+  height: max-content;
+  display: block;
+}
+
+#tulisantengahhome {
+  padding: 20px;
+  margin-top: 20;
+}
+
+#tentangkami {
+  padding: 20px;
+  margin-top: 20;
+}
+
+#tulisantengah {
+  padding: 20px;
+  margin-top: 20;
+}
+
+#source {
+  background-color: #d9eaf1;
+  margin: 0px;
+}
+
+#bawahan {
+  background-color: #33a574;
+  margin: 0px;
+}
+
+#artikel {
+  margin-left: 90px;
+  margin-right: 90px;
+  margin-top: 20px;
+}
+
+#atasan {
+  background-color: #e7dfea;
+  margin-bottom: 0px;
+}
+
+#jarak {
+  background-color: #ffff;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.start-test {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  background: rgb(109, 56, 126);
+  color: white;
+  font-size: 32px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.start-test:hover {
+  background-color: burlywood;
+}
+
+.container {
+  display: none;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.question-container {
+  margin: 40px;
+  width: 50%;
+}
+
+#question-count {
+  font-weight: bold;
+}
+
+#extrovert {
+  background-color: #e7008a;
+}
+
+#refrensi {
+  background-color: #a2d9ff;
+}
+
+#question {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.ans {
+  margin-top: 20px;
+  background-color: #e8eb67;
+  padding: 10px 0px 10px 0px;
+  cursor: pointer;
+}
+
+.my-alpha {
+  font-weight: bold;
+  padding: 10px;
+  background-color: #23bbd6;
+  margin-right: 10px;
+}
+
+.your-answers {
+  margin: 40px;
+  width: 50%;
+  background-color: aliceblue;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-left: 195px;
+}
+
+.btn2,
+.restart {
+  display: flex;
+  justify-content: center;
+  margin-top: 0px;
+}
+
+#previous {
+  background-color: #dde9ff;
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+#next {
+  background-color: #dde9ff;
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+#restart {
+  background-color: peru;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 40px;
+  background-color: rgb(179, 178, 178);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#test-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+  background-color: aliceblue;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+#image {
+  width: 40%;
+  border-radius: 20px;
+}
+
+#trait {
+  margin-top: 40px;
+}
+
+#trait-title {
+  font-size: 30px;
+}
+
+#trait div {
+  margin-top: 20px;
+}
+
+#trait ul {
+  margin-top: 20px;
+}
+
+#trait ul li {
+  margin-top: 10px;
+}
+
+/* Extra small devices (phones, 768px and down) */
+@media only screen and (max-width: 868px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+  }
+  .question-container {
+    margin: 60px;
+    width: 80%;
+  }
+
+  #artikel {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  #refrensi {
+    background-color: #a2d9ff;
+  }
+
+  #carouselExampleDark {
+    width: 40%;
+    height: auto;
+    justify-content: center;
+    margin-left: 120px;
+  }
+
+  .welcome {
+    margin-top: 10px;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 43px;
+    margin-left: 55px;
+  }
+
+  .header-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 30px;
+  }
+
+  .your-answers {
+    width: 80%;
+  }
+
+  .footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    padding: 5px;
+  }
+}
