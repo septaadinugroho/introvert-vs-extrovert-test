@@ -1,4 +1,3 @@
-//untuk menangkap
 const getanswercat = (questions, index) => {
   let cat = questions[index].answers[0].cat;
   return cat;

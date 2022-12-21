@@ -1,5 +1,5 @@
 const randindexes = require("./randindexes");
-//mengambil 21 pertanyaan acak
-test("generate 21 indeks pertanyaan acak", () => {
+
+test("generates 5 random question indexes", () => {
   expect(randindexes()).toBe(5);
 });
