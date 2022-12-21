@@ -1,3 +1,4 @@
+//mendapatkan objek pertanyaan
 const getquestionobj = (questions, index) => {
   let question = questions[index];
   return question;

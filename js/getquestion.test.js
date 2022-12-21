@@ -1,6 +1,7 @@
 const getquestion = require("./getquestion");
 const questions = require("./db");
 const expectedQuestion = questions[2].question;
-test("get the question at a particular index (question, question_index)", () => {
+//untuk mengambil pertanyaan di index tertentu, karena sistem pertanyaan yang diberikan adalah acak
+test("Dapatkan pertanyaan di indeks tertentu (question, question_index)", () => {
   expect(getquestion(questions, 2)).toBe(expectedQuestion);
 });

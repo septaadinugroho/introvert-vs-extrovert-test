@@ -6,6 +6,6 @@
   "scripts": {
     "test": "jest"
   },
-  "author": "Charles Effiong",
+  "author": "Septa",
   "license": "ISC"
 }

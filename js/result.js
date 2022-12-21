@@ -1,8 +1,9 @@
+//menentukan hasil diagnosa dari index jawaban yang dipilih
 const result = (introvert, extrovert) => {
   if (introvert > extrovert) {
-    return "You're an Introvert";
+    return "Kamu introvert";
   } else {
-    return "You're an Extrovert";
+    return "Kamu extrovert";
   }
 };
 

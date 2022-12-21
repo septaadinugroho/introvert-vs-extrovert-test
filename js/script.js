@@ -16,40 +16,39 @@ const startTest = () => {
     count++;
   }
 
-  //show
+  //tampilkan pertanyaan
   questionIndex = 0;
   let questionObj = questions[selectedIndexes[questionIndex]];
-  //console.log(questionObj);
 
-  //show new question
+  //tampilkan pertanyaan baru
   displayQuestion(questionObj);
 
-  //set the question number
+  //set nomor pertanyaan
   document.getElementById("counter").innerHTML = questionIndex + 1;
 
-  //disable previous button and next button
-  document.getElementById("next").style.pointerEvents = "none";
-  document.getElementById("next").style.color = "gray";
+  //matikan tombol sebelumnya dan selanjutnya
+  document.getElementById("Selanjutnya").style.pointerEvents = "none";
+  document.getElementById("Selanjutnya").style.color = "gray";
 
-  document.getElementById("previous").style.pointerEvents = "none";
-  document.getElementById("previous").style.color = "gray";
+  document.getElementById("Sebelumnya").style.pointerEvents = "none";
+  document.getElementById("Sebelumnya").style.color = "gray";
 
-  //hide the intro page and show the test
+  //menyembunyikan gambar halaman ketika pencet tombol mulai
   document.getElementsByClassName("welcome")[0].style.display = "none";
   document.getElementsByClassName("container")[0].style.display = "flex";
 
-  //don't show test result
+  //Jangan tampilkan hasil tes sebelum selesai
   document.getElementById("test-result").style.display = "none";
 
-  //hide restart button
+  //sembunyikan tombol restart sebelum selesai
   document.getElementById("restart").style.display = "none";
 
-  //hide the right side
+  //sembunyikan jawaban pilihan sebelum selesai
   document.getElementsByClassName("your-answers")[0].style.display = "none";
 };
 
 const resetPreviousStyles = () => {
-  //reset styles added previously
+  //mereset tampilan jawaban setelah dipilih
   document.getElementById("div-ans-a").style.border = "none";
   document.getElementById("div-ans-b").style.border = "none";
   document.getElementById("div-ans-c").style.border = "none";
@@ -75,7 +74,7 @@ const displayQuestion = (questionObj) => {
   document.getElementById("ans-c").innerHTML = questionObj.answers[2].text;
   document.getElementById("ans-d").innerHTML = questionObj.answers[3].text;
 
-  //enable previous button if there's a previous question
+  //nyalain tombol sebelumnya kalo sebelumnya ada pertanyaan
   if (questionIndex > 0) {
     document.getElementById("previous").style.pointerEvents = "auto";
     document.getElementById("previous").style.color = "black";
@@ -84,7 +83,7 @@ const displayQuestion = (questionObj) => {
     document.getElementById("previous").style.color = "gray";
   }
 
-  //enable the next button only if there's an existing answer
+  //nyalain tombol selanjutnya kalo masih ada pertanyaan
   if (selectedAnswers[questionIndex] !== null) {
     document.getElementById("next").style.pointerEvents = "auto";
     document.getElementById("next").style.color = "black";
@@ -102,71 +101,71 @@ const displayQuestion = (questionObj) => {
   }
 };
 
+//pertanyaan selanjutnya
 const nextQuestion = () => {
   if (questionIndex < selectedIndexes.length - 1) {
     questionIndex++;
     let questionObj = questions[selectedIndexes[questionIndex]];
-    //console.log(questionObj);
 
-    //reset styles added previously
+    //reset tampilan lagi
     resetPreviousStyles();
 
-    //show new question
+    //tampilkan pertanyaan baru
     displayQuestion(questionObj);
 
     if (selectedAnswers[questionIndex] !== null) {
-      //previous answer exist
-      //set the selected answer since user can change the answer
+      //jawaban selanjutnya tersedia
+      //set jawaban yang dipilih setelah user ganti jawaban
       let answer = selectedAnswers[questionIndex];
       displaySelectedAnswer(answer);
     }
 
-    //set the question number
+    //set nomor pertanyaan
     document.getElementById("counter").innerHTML = questionIndex + 1;
   } else {
     showAllQuestionAndAnswer();
   }
 };
 
+//pertanyaan sebelumnya
 const previousQuestion = () => {
   console.log(questionIndex);
   if (questionIndex > 0) {
     questionIndex--;
 
     let questionObj = questions[selectedIndexes[questionIndex]];
-    //console.log(questionObj);
 
     resetPreviousStyles();
 
-    //show new question
+    //tampilin pertanyaan baru
     displayQuestion(questionObj);
 
-    //set the question number
+    //set nomor pertanyaan
     document.getElementById("counter").innerHTML = questionIndex + 1;
 
-    //set the selected answer since user can change the answer
+    //set jawaban yang dipilih setelah user ganti jawaban
     let answer = selectedAnswers[questionIndex];
     displaySelectedAnswer(answer);
   }
 };
 
 const selectedAnswer = (ans) => {
-  //reset styles added previously
+  //reset tampilan
   resetPreviousStyles();
 
-  //setSelected answers
+  //jawaban pilihan
   displaySelectedAnswer(ans);
 
-  //when answer is selected, enable the next button
+  //kalo jawabannya udah dipilih, nyalakan tombol selanjutnya
   document.getElementById("next").style.pointerEvents = "auto";
   document.getElementById("next").style.color = "black";
 
-  //user answer so we can display it at the end
+  //tampilin jawaban terpilih di akhir
   selectedAnswers[questionIndex] = ans;
   //console.log(selectedAnswers);
 };
 
-//function to show the chosen question and answer. For summary at the end of the test
+//berfungsi untuk menampilkan pertanyaan dan jawaban yang dipilih. Untuk ringkasan di akhir tes
 const showElement = (questionObj, chosenAnswer, index) => {
   let element = "";
 
@@ -261,11 +260,11 @@ const showElement = (questionObj, chosenAnswer, index) => {
 };
 
 const showAllQuestionAndAnswer = () => {
-  //store the count for later comparison
+  //Simpan hitungan untuk perbandingan nanti di akhir
   let introvertCount = 0;
   let extrovertCount = 0;
 
-  //get the questions and selected answer in order to display the summary
+  //Dapatkan pertanyaan dan jawaban yang dipilih untuk menampilkan ringkasan jawaban
   for (let i = 0; i < selectedIndexes.length; i++) {
     let questionObj = questions[selectedIndexes[i]];
     let answer = selectedAnswers[i];
@@ -285,19 +284,20 @@ const showAllQuestionAndAnswer = () => {
 
   showPersonalities(introvertCount, extrovertCount);
 
-  //hide the previous and finish button and show restart button
+  //Sembunyikan tombol Sebelumnya dan Selesai dan Tampilkan tombol restart
   document.getElementById("next").style.display = "none";
   document.getElementById("previous").style.display = "none";
 };
 
 const showPersonalities = (introvert, extrovert) => {
   if (introvert > extrovert) {
-    //show image
+    //tampilin gambar
     document.getElementById("image").src = "img/introvert.png";
 
     document.getElementById("trait-title").innerText = "Wah! Kamu adalah Introvert!";
 
-    //append personality traits
+    //Tambahkan ciri-ciri kepribadian
+
     let element = `<li>Berada di Sekitar Banyak Orang Menguras Energimu</li>
     <li>Kamu menikmati kesendirian</li>
     <li>Kamu memiliki sekelompok kecil teman dekat</li>
@@ -313,11 +313,12 @@ const showPersonalities = (introvert, extrovert) => {
     <li>Kamu tertarik pada pekerjaan yang melibatkan kemandirian</li>`;
     document.getElementById("personalities").innerHTML += element;
   } else {
-    //show image
+    //tampilin gambar
     document.getElementById("image").src = "img/extrovert.png";
     document.getElementById("trait-title").innerText = "Wah! Kamu adalah Extrovert!";
 
-    //append personality traits
+    //Tambahkan ciri-ciri kepribadian
+
     let element = `<li>Kamu senang menjadi pusat perhatian.</li>
     <li>Kamu suka bekerja dengan sekelompok orang.</li>
     <li>Kamu merasa terisolasi ketika harus menghabiskan banyak waktu sendirian.</li>
@@ -333,16 +334,17 @@ const showPersonalities = (introvert, extrovert) => {
     document.getElementById("personalities").innerHTML += element;
   }
 
-  //show test result
+  //hasil tes
   document.getElementById("test-result").style.display = "flex";
 
-  //show restart button
+  //tampilin tombol restart
   document.getElementById("restart").style.display = "block";
 
-  //show the right side
+  //tampilin jawaban yang dipilih
   document.getElementsByClassName("your-answers")[0].style.display = "block";
 };
 
+//function buat restart
 const restartQuestion = () => {
   window.location.reload();
 };

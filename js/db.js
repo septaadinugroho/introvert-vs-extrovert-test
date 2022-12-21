@@ -463,4 +463,4 @@ const questions = [
   },
 ];
 
-module.exports = questions;
+module.exports = questions; //untuk mengexport objek pertanyaan
